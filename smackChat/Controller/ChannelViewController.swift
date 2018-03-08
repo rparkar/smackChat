@@ -14,6 +14,11 @@ class ChannelViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+    //action so the close button unwinds to the channel VC and is not dismissed to the login screen
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
