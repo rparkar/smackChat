@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+typealias CompletionHandler = (_ success: Bool) -> ()
+
 //segue constants
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
@@ -17,4 +20,8 @@ let UNWIND = "unwindToChannel"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+//URL constants
+let BASE_URL = "https://chittychatter.herokuapp.com/v1/"
+let URL_REGISTER = "\(BASE_URL)acount/register"
 

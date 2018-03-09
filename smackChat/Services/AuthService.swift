@@ -9,6 +9,7 @@
 //handles login, create and register user
 
 import Foundation
+import Alamofire
 
 class AuthService {
     
@@ -46,6 +47,35 @@ class AuthService {
             defaults.set(newValue, forKey: USER_EMAIL)
         }
     }
+    
+    func registerUser(email:String, password:String, completion: @escaping CompletionHandler){
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        //create json object like header and body
+        let header = [
+            "Content-Type": "application/JSON; charset=utf-8"
+        ]
+        
+        let body : [String :Any] = [
+            "email" : lowerCaseEmail ,
+            "password": password
+        ]
+        
+        //create request
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            
+            if response.result.error == nil { // if there is no error
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
+    
+    
     
     
     
