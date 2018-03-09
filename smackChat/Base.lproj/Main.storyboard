@@ -177,7 +177,7 @@
                                     <action selector="closeButtonPressed:" destination="aHo-6Q-pU7" eventType="touchUpInside" id="x9b-P4-x7j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-M4-dQJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-M4-dQJ" customClass="RoundedButton" customModule="smackChat" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="335" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.92950904190000005" green="0.090979955400000007" blue="0.1594906925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -187,6 +187,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAu-YN-s57">
                                 <rect key="frame" x="62.5" y="385" width="250" height="29"/>
@@ -381,7 +386,7 @@
                                     <action selector="pickBackgroundColorPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="TK6-Bq-3ga"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-pO-XQk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-pO-XQk" customClass="RoundedButton" customModule="smackChat" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="552" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.92950904190000005" green="0.090979955400000007" blue="0.1594906925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -391,6 +396,11 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccountPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="vv7-r4-qMO"/>
                                 </connections>

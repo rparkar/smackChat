@@ -23,5 +23,5 @@ let USER_EMAIL = "userEmail"
 
 //URL constants
 let BASE_URL = "https://chittychatter.herokuapp.com/v1/"
-let URL_REGISTER = "\(BASE_URL)acount/register"
+let URL_REGISTER = "\(BASE_URL)account/register"
 

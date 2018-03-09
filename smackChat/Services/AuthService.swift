@@ -54,7 +54,7 @@ class AuthService {
         
         //create json object like header and body
         let header = [
-            "Content-Type": "application/JSON; charset=utf-8"
+            "Content-Type": "application/json; charset=utf-8"
         ]
         
         let body : [String :Any] = [
