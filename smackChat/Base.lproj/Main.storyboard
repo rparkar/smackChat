@@ -359,6 +359,7 @@
                                     <color key="titleColor" red="0.92950904190000005" green="0.090979955400000007" blue="0.1594906925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="chooseAvatarPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="tP6-xB-xzi"/>
                                     <action selector="createAccountButtonPressed:" destination="aHo-6Q-pU7" eventType="touchUpInside" id="ykb-Zy-Mae"/>
                                 </connections>
                             </button>
@@ -377,6 +378,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountButtonPressed:" destination="aHo-6Q-pU7" eventType="touchUpInside" id="quo-pZ-eU9"/>
+                                    <action selector="pickBackgroundColorPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="TK6-Bq-3ga"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-pO-XQk">
@@ -389,6 +391,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="vv7-r4-qMO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -412,6 +417,10 @@
                         <viewLayoutGuide key="safeArea" id="f33-lV-6B8"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="Ta0-EJ-zkS" id="xzc-6e-DL3"/>
+                        <outlet property="passwordTextFIeld" destination="4lQ-JO-II6" id="3Fc-y1-Pt9"/>
+                        <outlet property="userImageView" destination="dDY-FN-xEH" id="ZQb-Na-oHa"/>
+                        <outlet property="userNameTextField" destination="wSh-Yt-Tbe" id="hZl-Ur-6Mv"/>
                         <segue destination="TCq-Sd-mCv" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="qdc-s1-R04"/>
                     </connections>
                 </viewController>

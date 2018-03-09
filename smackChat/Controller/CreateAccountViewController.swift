@@ -10,6 +10,15 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
 
+    //outlets
+    
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextFIeld: UITextField!
+    @IBOutlet weak var userImageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,5 +30,28 @@ class CreateAccountViewController: UIViewController {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
     
-
+    
+    @IBAction func createAccountPressed(_ sender: Any) {
+        
+        // let email = textfield where textfield is not nil else return
+        guard let email = emailTextField.text, emailTextField.text != "" else {return}
+        guard let pass = passwordTextFIeld.text, passwordTextFIeld.text != "" else {return}
+        
+        //call registration function frmo the service
+        AuthService.instance.registerUser(email: email, password: pass) { (success) in
+            
+            if success {
+                print("user registered")
+            }
+        }
+        
+    }
+    
+    @IBAction func chooseAvatarPressed(_ sender: Any) {
+    }
+    
+    
+    @IBAction func pickBackgroundColorPressed(_ sender: Any) {
+    }
+    
 }
