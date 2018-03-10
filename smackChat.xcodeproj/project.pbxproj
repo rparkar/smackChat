@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6CAC396C20536E72009A032C /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC396B20536E72009A032C /* CircularImage.swift */; };
+		6CB685E420538ED800DA442F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB685E220538ED800DA442F /* ProfileViewController.swift */; };
+		6CB685E520538ED800DA442F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB685E320538ED800DA442F /* ProfileViewController.xib */; };
 		6CC86EEB204F27950086082C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC86EEA204F27950086082C /* AppDelegate.swift */; };
 		6CC86EF0204F27960086082C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EEE204F27960086082C /* Main.storyboard */; };
 		6CC86EF2204F27960086082C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EF1204F27960086082C /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		41711D85DB99509DFAA538CA /* Pods_smackChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smackChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAC396B20536E72009A032C /* CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
+		6CB685E220538ED800DA442F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6CB685E320538ED800DA442F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		6CC86EE7204F27950086082C /* smackChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smackChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC86EEA204F27950086082C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CC86EEF204F27960086082C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6CB685E620538F1800DA442F /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				6CB685E320538ED800DA442F /* ProfileViewController.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		6CC86EDE204F27950086082C = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 		6CC86EE9204F27950086082C /* smackChat */ = {
 			isa = PBXGroup;
 			children = (
+				6CB685E620538F1800DA442F /* XIBs */,
 				6CC86F112050E5010086082C /* Services */,
 				6CC86F0A2050C1D80086082C /* utilities */,
 				6CC86F03204F9A020086082C /* Model */,
@@ -128,6 +141,7 @@
 				6CC86F0D2050C84E0086082C /* LoginViewController.swift */,
 				6CC86F0F2050D3640086082C /* CreateAccountViewController.swift */,
 				6CC86F18205240F10086082C /* AvatarPickerViewController.swift */,
+				6CB685E220538ED800DA442F /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +255,7 @@
 			files = (
 				6CC86EF5204F27960086082C /* LaunchScreen.storyboard in Resources */,
 				6CC86EF2204F27960086082C /* Assets.xcassets in Resources */,
+				6CB685E520538ED800DA442F /* ProfileViewController.xib in Resources */,
 				6CC86EF0204F27960086082C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +341,7 @@
 				6CC86F102050D3640086082C /* CreateAccountViewController.swift in Sources */,
 				6CC86F1B2052423A0086082C /* AvatarCell.swift in Sources */,
 				6CC86F07204F9A320086082C /* ChannelViewController.swift in Sources */,
+				6CB685E420538ED800DA442F /* ProfileViewController.swift in Sources */,
 				6CC86F00204F95230086082C /* SWRevealViewController.m in Sources */,
 				6CC86F0C2050C1F70086082C /* Constants.swift in Sources */,
 			);
