@@ -37,7 +37,7 @@ let HEADER = [
 let smackPurplePlaceHolder = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 0.5)
 
 //notification constant
-let NOTIF_USER_DATA_DID_CHANGE = Notification.Name(name: "notifUserDataCahnged")
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataCahnged")
 
 
 

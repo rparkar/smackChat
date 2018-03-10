@@ -32,4 +32,43 @@ class UserDataService {
         self.avatarName = avatarName
         
     }
+    
+    //convert RGB values from string to int
+    func returnUIColor(components: String) -> UIColor{
+        
+        let defaultColor = UIColor.lightGray
+        
+        let scanner = Scanner(string: components)
+        
+        // do not scan [] and a space from the string
+        let skipped = CharacterSet(charactersIn: "[], ]")
+        
+        // assign the , to comma
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skipped
+        
+        var r, g, b, a : NSString?
+        //scan from start to , and then continue after comma and save in var
+        scanner.scanUpToCharacters(from: comma, into: &r)
+        scanner.scanUpToCharacters(from: comma, into: &g)
+        scanner.scanUpToCharacters(from: comma, into: &b)
+        scanner.scanUpToCharacters(from: comma, into: &a)
+        
+        //unwrap the option r g b and a. if they fail set to default color
+        guard let rUnwrapped = r else {return defaultColor}
+        guard let gUnwrapped = g else {return defaultColor}
+        guard let bUnwrapped = b else {return defaultColor}
+        guard let aUnwrapped = a else {return defaultColor}
+        
+        //convert the string to double and then to cgfloat
+        let rFloat = CGFloat(rUnwrapped.doubleValue)
+        let gFloat = CGFloat(gUnwrapped.doubleValue)
+        let bFloat = CGFloat(bUnwrapped.doubleValue)
+        let aFloat = CGFloat(aUnwrapped.doubleValue)
+        
+        let newUIColor  = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
+        
+        return newUIColor
+        
+    }
 }
