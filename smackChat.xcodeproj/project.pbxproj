@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CAC396C20536E72009A032C /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC396B20536E72009A032C /* CircularImage.swift */; };
 		6CC86EEB204F27950086082C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC86EEA204F27950086082C /* AppDelegate.swift */; };
 		6CC86EF0204F27960086082C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EEE204F27960086082C /* Main.storyboard */; };
 		6CC86EF2204F27960086082C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EF1204F27960086082C /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		41711D85DB99509DFAA538CA /* Pods_smackChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smackChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CAC396B20536E72009A032C /* CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		6CC86EE7204F27950086082C /* smackChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smackChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC86EEA204F27950086082C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CC86EEF204F27960086082C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				6CC86F08204FA32D0086082C /* GradientView.swift */,
 				6CC86F1420521DD20086082C /* RoundedButton.swift */,
 				6CC86F1A2052423A0086082C /* AvatarCell.swift */,
+				6CAC396B20536E72009A032C /* CircularImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				6CC86F0E2050C84E0086082C /* LoginViewController.swift in Sources */,
 				6CC86F1520521DD30086082C /* RoundedButton.swift in Sources */,
+				6CAC396C20536E72009A032C /* CircularImage.swift in Sources */,
 				6CC86EEB204F27950086082C /* AppDelegate.swift in Sources */,
 				6CC86F17205233340086082C /* UserDataService.swift in Sources */,
 				6CC86F05204F9A200086082C /* ChatViewController.swift in Sources */,
