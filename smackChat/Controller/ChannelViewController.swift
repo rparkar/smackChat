@@ -31,6 +31,11 @@ class ChannelViewController: UIViewController {
         
         
     }
+    
+    //check if user is logged in and set up User info
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo()
+    }
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
@@ -51,6 +56,12 @@ class ChannelViewController: UIViewController {
     
     @objc func userDataDidChange(_notif: Notification) {
         
+        setUpUserInfo()
+       
+    }
+    
+    func setUpUserInfo(){
+        
         //if the user is logged in then display user info
         if AuthService.instance.isLoggedIn == true {
             loginButton.setTitle(UserDataService.instance.name, for: .normal)
@@ -63,8 +74,6 @@ class ChannelViewController: UIViewController {
             userImage.backgroundColor = UIColor.clear
         }
     }
-    
-    
     
 
 }

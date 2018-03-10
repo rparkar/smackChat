@@ -25,6 +25,14 @@ class ChatViewController: UIViewController {
         // tap to close the channelVC
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        
+        //check if user is logged in when openeing the app
+        if AuthService.instance.isLoggedIn {
+            AuthService.instance.findUserByEmail(completion: { (success) in
+                
+                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+            })
+        }
     }
 
 
