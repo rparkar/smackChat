@@ -405,6 +405,10 @@
                                     <action selector="createAccountPressed:" destination="EpF-5o-Tph" eventType="touchUpInside" id="vv7-r4-qMO"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d8L-zS-UaK">
+                                <rect key="frame" x="169" y="165" width="37" height="37"/>
+                                <color key="color" red="0.92950904190000005" green="0.090979955400000007" blue="0.1594906925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -416,7 +420,9 @@
                             <constraint firstItem="mk2-pO-XQk" firstAttribute="centerX" secondItem="U4C-bv-piT" secondAttribute="centerX" id="9Ad-A3-UaC"/>
                             <constraint firstItem="KFg-6n-kvn" firstAttribute="centerX" secondItem="U4C-bv-piT" secondAttribute="centerX" id="EES-CB-CeT"/>
                             <constraint firstItem="ovB-bM-PY8" firstAttribute="centerX" secondItem="U4C-bv-piT" secondAttribute="centerX" id="G2E-Bm-BIX"/>
+                            <constraint firstItem="d8L-zS-UaK" firstAttribute="centerX" secondItem="U4C-bv-piT" secondAttribute="centerX" id="RGn-f2-yaP"/>
                             <constraint firstItem="xDE-I8-uhv" firstAttribute="centerX" secondItem="U4C-bv-piT" secondAttribute="centerX" id="WjD-r1-Q24"/>
+                            <constraint firstItem="d8L-zS-UaK" firstAttribute="centerY" secondItem="U4C-bv-piT" secondAttribute="centerY" constant="-150" id="X6s-sH-W36"/>
                             <constraint firstItem="ovB-bM-PY8" firstAttribute="top" secondItem="KFg-6n-kvn" secondAttribute="bottom" constant="5" id="a0T-gA-xgV"/>
                             <constraint firstItem="dDY-FN-xEH" firstAttribute="top" secondItem="s7f-0i-kDj" secondAttribute="bottom" constant="40" id="fHy-e8-F0p"/>
                             <constraint firstItem="s7f-0i-kDj" firstAttribute="top" secondItem="xDE-I8-uhv" secondAttribute="bottom" constant="30" id="n4w-B3-tGS"/>
@@ -429,6 +435,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Ta0-EJ-zkS" id="xzc-6e-DL3"/>
                         <outlet property="passwordTextFIeld" destination="4lQ-JO-II6" id="3Fc-y1-Pt9"/>
+                        <outlet property="spinner" destination="d8L-zS-UaK" id="ul2-Eg-ZsD"/>
                         <outlet property="userImageView" destination="dDY-FN-xEH" id="ZQb-Na-oHa"/>
                         <outlet property="userNameTextField" destination="wSh-Yt-Tbe" id="hZl-Ur-6Mv"/>
                         <segue destination="TCq-Sd-mCv" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="qdc-s1-R04"/>

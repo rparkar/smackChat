@@ -17,6 +17,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextFIeld: UITextField!
     @IBOutlet weak var userImageView: UIImageView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     //default variables
     var avatarName = "profileDefault"
     var avatarColor = "[0.5,0.5,0.5,1]" // RGB values
@@ -26,6 +28,7 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpView()
         // Do any additional setup after loading the view.
     }
 
@@ -52,6 +55,9 @@ class CreateAccountViewController: UIViewController {
     
     @IBAction func createAccountPressed(_ sender: Any) {
         
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
         // let email = textfield where textfield is not nil else return
         guard let name = userNameTextField.text, userNameTextField.text != "" else {return}
         guard let email = emailTextField.text, emailTextField.text != "" else {return}
@@ -71,7 +77,11 @@ class CreateAccountViewController: UIViewController {
                             if success {
                                 print(UserDataService.instance.name)
                                 print(UserDataService.instance.avatarColor)
+                                self.spinner.isHidden = true
+                                self.spinner.startAnimating()
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
+                                //send the app a notif sayinng something has been updated (account created)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                             }
                         })
                     }
@@ -101,7 +111,23 @@ class CreateAccountViewController: UIViewController {
         //self.userImageView.backgroundColor = bGColor
     }
     
+    //placeholder text
     func setUpView(){
+        userNameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
         
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
+        
+        passwordTextFIeld.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
+        
+        spinner.isHidden = true
+        
+        //to hide the keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.handleTap))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func handleTap(){
+        view.endEditing(true)
     }
 }
