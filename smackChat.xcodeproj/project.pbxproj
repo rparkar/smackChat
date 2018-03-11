@@ -10,6 +10,8 @@
 		6CAC396C20536E72009A032C /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC396B20536E72009A032C /* CircularImage.swift */; };
 		6CB685E420538ED800DA442F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB685E220538ED800DA442F /* ProfileViewController.swift */; };
 		6CB685E520538ED800DA442F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB685E320538ED800DA442F /* ProfileViewController.xib */; };
+		6CB685F22055E08700DA442F /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB685F12055E08700DA442F /* Channel.swift */; };
+		6CB685F42055E0F300DA442F /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB685F32055E0F300DA442F /* MessageService.swift */; };
 		6CC86EEB204F27950086082C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC86EEA204F27950086082C /* AppDelegate.swift */; };
 		6CC86EF0204F27960086082C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EEE204F27960086082C /* Main.storyboard */; };
 		6CC86EF2204F27960086082C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CC86EF1204F27960086082C /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		6CAC396B20536E72009A032C /* CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		6CB685E220538ED800DA442F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6CB685E320538ED800DA442F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		6CB685F12055E08700DA442F /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = smackChat/Controller/Channel.swift; sourceTree = SOURCE_ROOT; };
+		6CB685F32055E0F300DA442F /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		6CC86EE7204F27950086082C /* smackChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smackChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC86EEA204F27950086082C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CC86EEF204F27960086082C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		6CC86F03204F9A020086082C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6CB685F12055E08700DA442F /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				6CC86F122050E5180086082C /* AuthService.swift */,
 				6CC86F16205233340086082C /* UserDataService.swift */,
+				6CB685F32055E0F300DA442F /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -330,10 +336,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CC86F0E2050C84E0086082C /* LoginViewController.swift in Sources */,
+				6CB685F22055E08700DA442F /* Channel.swift in Sources */,
 				6CC86F1520521DD30086082C /* RoundedButton.swift in Sources */,
 				6CAC396C20536E72009A032C /* CircularImage.swift in Sources */,
 				6CC86EEB204F27950086082C /* AppDelegate.swift in Sources */,
 				6CC86F17205233340086082C /* UserDataService.swift in Sources */,
+				6CB685F42055E0F300DA442F /* MessageService.swift in Sources */,
 				6CC86F05204F9A200086082C /* ChatViewController.swift in Sources */,
 				6CC86F132050E5180086082C /* AuthService.swift in Sources */,
 				6CC86F19205240F10086082C /* AvatarPickerViewController.swift in Sources */,
