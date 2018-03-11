@@ -42,7 +42,7 @@ class AuthService {
     
     var userEmail: String {
         get {
-            return UserDefaults.value(forKey: USER_EMAIL) as! String
+            return defaults.value(forKey: USER_EMAIL) as! String
         }
         set {
             defaults.set(newValue, forKey: USER_EMAIL)
@@ -183,7 +183,7 @@ class AuthService {
         
         Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
-            if response.result.error != nil {
+            if response.result.error == nil {
                 guard let data = response.data else {return}
                 self.setUserInfo(data: data)
                 completion(true)

@@ -213,7 +213,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Nkc-gP-G97">
                                 <rect key="frame" x="62.5" y="175" width="250" height="100"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1K-8c-uJ7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1K-8c-uJ7">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0yL-3J-151"/>
@@ -231,7 +231,7 @@
                                             <constraint firstAttribute="width" constant="250" id="hI7-F9-Dik"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hiidnidwd" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gf5-Yg-7Sz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gf5-Yg-7Sz">
                                         <rect key="frame" x="0.0" y="56" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="O8p-cR-z2a"/>
@@ -311,7 +311,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-0i-kDj">
                                 <rect key="frame" x="62.5" y="121" width="250" height="156"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Yt-Tbe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Yt-Tbe">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="jRF-cJ-ypl"/>
@@ -329,7 +329,7 @@
                                             <constraint firstAttribute="width" constant="250" id="gaK-C2-oVi"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email address" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-EJ-zkS">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-EJ-zkS">
                                         <rect key="frame" x="0.0" y="56" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DlR-0c-Zbx"/>
@@ -347,7 +347,7 @@
                                             <constraint firstAttribute="height" constant="2" id="ktA-c0-dhm"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="hiidnidwd" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-JO-II6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-JO-II6">
                                         <rect key="frame" x="0.0" y="112" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FWV-83-hJZ"/>
