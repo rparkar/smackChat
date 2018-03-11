@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController {
+class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //outlets
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userImage: CircularImage!
@@ -28,6 +29,9 @@ class ChannelViewController: UIViewController {
         
         //listen for any changes in user data
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelViewController.userDataDidChange(_notif:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         
     }
@@ -75,5 +79,26 @@ class ChannelViewController: UIViewController {
         }
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            
+            return cell
+        } else {
+             return UITableViewCell()
+        }
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
 
 }
