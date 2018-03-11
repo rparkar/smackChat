@@ -101,4 +101,12 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         return MessageService.instance.channels.count
     }
 
+    @IBAction func addChannelButtonPressed(_ sender: Any) {
+        
+        let addChannel = AddChannelViewController()
+        addChannel.modalPresentationStyle = .custom
+        present(addChannel, animated: true, completion: nil)
+    }
+    
+    
 }
