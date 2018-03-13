@@ -33,6 +33,14 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
+        //get channels from API
+        SocketService.instance.getChannel { (success) in
+            if success {
+                print("any channel")
+                self.tableView.reloadData()
+            }
+        }
+        
         
     }
     
