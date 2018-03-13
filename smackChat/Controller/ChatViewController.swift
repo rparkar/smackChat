@@ -63,6 +63,7 @@ class ChatViewController: UIViewController {
     func updateWithChannel(){
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLabel.text = "#\(channelName)"
+        getMessages()
     }
     
     func onLoginGetMessages(){
@@ -70,7 +71,23 @@ class ChatViewController: UIViewController {
             
             if success {
                 
+                //if there at least one channel tehn display first one
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                }
+            } else {
+                self.channelNameLabel.text = "No Channels yet"
             }
+            
+        }
+    }
+    
+    //find messages at the given channel ID
+    func getMessages(){
+        guard let channelID = MessageService.instance.selectedChannel?.id else {return}
+        MessageService.instance.findAllMessagesForChannel(channelID: channelID) { (success) in
+            
             
         }
     }
