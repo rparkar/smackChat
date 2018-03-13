@@ -10,6 +10,7 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var channelNameLabel: UILabel!
     
     @IBOutlet weak var menuButton: UIButton!
     
@@ -25,6 +26,10 @@ class ChatViewController: UIViewController {
         // tap to close the channelVC
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        //add observer for any changes
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.userDataDidChange(_notif:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.channelSelected(_notif:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         //check if user is logged in when openeing the app
         if AuthService.instance.isLoggedIn {
@@ -39,6 +44,35 @@ class ChatViewController: UIViewController {
         }
         
     }
+    
+    @objc func userDataDidChange(_notif: Notification){
+        
+        if AuthService.instance.isLoggedIn {
+            onLoginGetMessages()
+            
+        } else {
+            channelNameLabel.text = "Please Login"
+        }
+        
+    }
 
+    @objc func channelSelected(_notif: Notification) {
+        updateWithChannel()
+    }
+    
+    func updateWithChannel(){
+        let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
+        channelNameLabel.text = "#\(channelName)"
+    }
+    
+    func onLoginGetMessages(){
+        MessageService.instance.findAllChannels { (success) in
+            
+            if success {
+                
+            }
+            
+        }
+    }
 
 }

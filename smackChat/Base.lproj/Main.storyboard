@@ -613,6 +613,7 @@
                         <viewLayoutGuide key="safeArea" id="cds-AO-033"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="0hh-67-ozK" id="ia9-Of-MyA"/>
                         <outlet property="menuButton" destination="la4-LA-ZAE" id="9nP-iX-ec6"/>
                     </connections>
                 </viewController>

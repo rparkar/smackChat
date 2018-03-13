@@ -25,10 +25,6 @@ class SocketService: NSObject {
     //var manager = SocketManager(socketURL: URL(string: BASE_URL)!).defaultSocket
 
     var socket: SocketIOClient = SocketIOClient(socketURL: URL(string: BASE_URL)!)
-
-    
-
-   // var socket: SocketIOClient = SocketManager(socketURL: URL(string: BASE_URL)!).defaultSocket
     
     func establishConnection(){
         print("connection est")
