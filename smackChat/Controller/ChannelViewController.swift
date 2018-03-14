@@ -43,6 +43,16 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
+        SocketService.instance.getMessage { (newMessage) in
+            
+            if newMessage.channelID != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn == true {
+                
+                MessageService.instance.unreadChannles.append(newMessage.channelID)
+                self.tableView.reloadData()
+                
+            }
+        }
+        
         
     }
     
@@ -131,6 +141,18 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         //check whcih channel is selected then send the app a notif
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
+        
+        //check if any unread msg in channel
+        if MessageService.instance.unreadChannles.count > 0 {
+            MessageService.instance.unreadChannles =
+                //filtering out the channel whcih is we clicked on
+                MessageService.instance.unreadChannles.filter{$0 != channel.id}
+        }
+        
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        
         
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         //slide menu back to hidden
