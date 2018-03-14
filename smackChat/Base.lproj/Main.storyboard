@@ -681,11 +681,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8di-vJ-e14">
+                                <rect key="frame" x="8" y="622" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="u3p-kL-w4f" firstAttribute="leading" secondItem="cds-AO-033" secondAttribute="leading" id="COm-tJ-HwE"/>
                             <constraint firstItem="cds-AO-033" firstAttribute="trailing" secondItem="SxC-Qu-aY8" secondAttribute="trailing" constant="8" id="D5N-wo-qT2"/>
+                            <constraint firstItem="8di-vJ-e14" firstAttribute="leading" secondItem="cds-AO-033" secondAttribute="leading" constant="8" id="Fuv-N4-lzZ"/>
                             <constraint firstItem="odc-nd-iPi" firstAttribute="leading" secondItem="cds-AO-033" secondAttribute="leading" id="Lfi-x2-k7f"/>
                             <constraint firstItem="cds-AO-033" firstAttribute="trailing" secondItem="u3p-kL-w4f" secondAttribute="trailing" id="X51-7g-eg3"/>
                             <constraint firstItem="odc-nd-iPi" firstAttribute="trailing" secondItem="cds-AO-033" secondAttribute="trailing" id="YBO-e9-iA5"/>
@@ -693,6 +700,7 @@
                             <constraint firstItem="B29-Ge-Jx8" firstAttribute="bottom" secondItem="cds-AO-033" secondAttribute="bottom" id="f3g-7T-g4A"/>
                             <constraint firstItem="SxC-Qu-aY8" firstAttribute="centerY" secondItem="B29-Ge-Jx8" secondAttribute="centerY" id="g95-gM-6wU"/>
                             <constraint firstItem="odc-nd-iPi" firstAttribute="top" secondItem="a0Z-nI-h1n" secondAttribute="top" id="me5-ep-aur"/>
+                            <constraint firstItem="B29-Ge-Jx8" firstAttribute="top" secondItem="8di-vJ-e14" secondAttribute="bottom" constant="5" id="opY-Q6-GxS"/>
                             <constraint firstItem="cds-AO-033" firstAttribute="trailing" secondItem="B29-Ge-Jx8" secondAttribute="trailing" id="vSL-4c-HnW"/>
                             <constraint firstItem="u3p-kL-w4f" firstAttribute="top" secondItem="odc-nd-iPi" secondAttribute="bottom" id="vYk-k6-q89"/>
                             <constraint firstItem="B29-Ge-Jx8" firstAttribute="leading" secondItem="cds-AO-033" secondAttribute="leading" id="wyb-TZ-LY9"/>
@@ -705,6 +713,7 @@
                         <outlet property="messageTextBox" destination="B29-Ge-Jx8" id="CaK-r4-nZR"/>
                         <outlet property="sendButton" destination="SxC-Qu-aY8" id="RJw-Jm-UVK"/>
                         <outlet property="tableView" destination="u3p-kL-w4f" id="a84-OO-zIq"/>
+                        <outlet property="typingUserLabel" destination="8di-vJ-e14" id="Ngs-rV-pWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZH-1C-goE" userLabel="First Responder" sceneMemberID="firstResponder"/>
