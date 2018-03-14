@@ -12,11 +12,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var messageTextBox: UITextField!
     
     @IBOutlet weak var menuButton: UIButton!
     
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
         view.addGestureRecognizer(tap)
+        
+        sendButton.isHidden = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,6 +47,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.userDataDidChange(_notif:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.channelSelected(_notif:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        //load the msgs
+        SocketService.instance.getMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+                
+                //scroll table view to show last chat message
+                if MessageService.instance.messages.count > 0 {
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                }
+            }
+        }
         
         //check if user is logged in when openeing the app
         if AuthService.instance.isLoggedIn {
@@ -68,6 +85,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             channelNameLabel.text = "Please Login"
+            tableView.reloadData()
         }
         
     }
@@ -131,6 +149,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         
+    }
+    
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        
+        if messageTextBox.text == "" {
+            isTyping = false
+            sendButton.isHidden = true
+        } else {
+            if isTyping == false {
+                sendButton.isHidden = false
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
