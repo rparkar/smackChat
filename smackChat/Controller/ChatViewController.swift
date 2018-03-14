@@ -12,11 +12,18 @@ class ChatViewController: UIViewController {
 
     @IBOutlet weak var channelNameLabel: UILabel!
     
+    @IBOutlet weak var messageTextBox: UITextField!
+    
     @IBOutlet weak var menuButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //binding the messagetext to the keyboard so the view shifts up and when tap the view shifts back down and the keybaord is hidden
+        view.bindToKeyboard()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.handleTap))
+        view.addGestureRecognizer(tap)
 
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         
@@ -60,6 +67,11 @@ class ChatViewController: UIViewController {
         updateWithChannel()
     }
     
+    @objc func handleTap(){
+        view.endEditing(true)
+    }
+    
+    
     func updateWithChannel(){
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLabel.text = "#\(channelName)"
@@ -91,5 +103,27 @@ class ChatViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        
+        if AuthService.instance.isLoggedIn {
+            guard let channelID = MessageService.instance.selectedChannel?.id else {return}
+            guard let message = messageTextBox.text else {return}
+            
+            SocketService.instance.addMessage(messageBody: message, userID: UserDataService.instance.id, channelID: channelID, completion: { (success) in
+                
+                if success {
+                    //if message send is successful
+                    self.messageTextBox.text = ""
+                    self.messageTextBox.resignFirstResponder()
+                }
+                
+            })
+            
+        }
+        
+        
+    }
+    
 
 }
